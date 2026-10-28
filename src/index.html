@@ -13,13 +13,16 @@
 </header>
 
 <main>
-  <section aria-labelledby="scheduleHeading">
-    <h2 id="scheduleHeading">Schedule</h2>
+  <section aria-labelledby="bigaHeading">
+    <h2 id="bigaHeading">Biga</h2>
     <label>Out of the oven
       <input id="end" type="datetime-local">
     </label>
+    <p>Start times use the target for each step. The window is the earliest and latest you can start a step and still come out of the oven on time.</p>
+    <!-- The table below carries the same information for screen readers. -->
+    <div id="timeline" class="timeline" aria-hidden="true"></div>
     <table>
-      <thead><tr><th scope="col">Step</th><th scope="col">Start</th></tr></thead>
+      <thead><tr><th scope="col">Step</th><th scope="col">Start</th><th scope="col">Window</th></tr></thead>
       <tbody id="steps"></tbody>
     </table>
   </section>

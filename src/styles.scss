@@ -1,1 +1,55 @@
 @use "@picocss/pico/scss/pico.classless";
+
+// Reduce overall font size by 1px
+:root {
+  font-size: calc(var(--pico-font-size) * 0.9375);
+}
+
+// Steps: a light band for when the step could run, a solid bar for the target.
+.timeline {
+  margin-bottom: var(--pico-spacing);
+
+  .label {
+    font-size: 0.875em;
+  }
+
+  .track {
+    position: relative;
+    height: 0.75rem;
+    margin-bottom: 0.5rem;
+
+    > div {
+      position: absolute;
+      height: 100%;
+      min-width: 4px;
+      border-radius: 4px;
+    }
+  }
+
+  .window {
+    background: color-mix(in srgb, var(--pico-primary-background) 25%, transparent);
+  }
+
+  .target {
+    background: var(--pico-primary-background);
+  }
+
+  .axis {
+    position: relative;
+    height: 1.5em;
+    font-size: 0.75em;
+    color: var(--pico-muted-color);
+    border-top: 1px solid var(--pico-muted-border-color);
+
+    span {
+      position: absolute;
+      transform: translateX(-50%);
+      white-space: nowrap;
+    }
+  }
+}
+
+// Keep each time on one line; the window breaks between its two times.
+th[scope="row"] ~ td {
+  white-space: pre;
+}
