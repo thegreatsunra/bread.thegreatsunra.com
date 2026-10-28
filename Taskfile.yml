@@ -1,0 +1,35 @@
+version: "3"
+
+tasks:
+  serve:
+    desc: Run the Vite dev server at http://localhost:5173, with live reload
+    preconditions:
+      - sh: command -v npm
+        msg: "npm is not installed. Install Node.js from https://nodejs.org"
+    cmds:
+      - npm run dev
+
+  build:
+    desc: Type-check and build the site into public/ with hashed asset filenames
+    preconditions:
+      - sh: command -v npm
+        msg: "npm is not installed. Install Node.js from https://nodejs.org"
+    cmds:
+      - npm run build
+
+  preview:
+    desc: Build, then serve public/ at http://localhost:4173 to check the production build
+    preconditions:
+      - sh: command -v npm
+        msg: "npm is not installed. Install Node.js from https://nodejs.org"
+    cmds:
+      - npm run build
+      - npm run preview
+
+  test:
+    desc: Run the JS tests in a Node container
+    preconditions:
+      - sh: docker info
+        msg: "Docker is not running. Start Docker and try again."
+    cmds:
+      - docker run --rm -v "$PWD":/app -v /app/node_modules -w /app node:24-alpine sh -c "npm ci && npm test"

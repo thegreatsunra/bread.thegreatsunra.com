@@ -191,3 +191,5 @@ dist
 
 # End of https://www.toptal.com/developers/gitignore/api/linux,macos,node
 
+### Build output ###
+public/
