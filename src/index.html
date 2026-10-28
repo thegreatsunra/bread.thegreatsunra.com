@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Bread Scheduler</title>
+<link rel="stylesheet" href="styles.scss">
+</head>
+<body>
+<header>
+  <h1>Bread Scheduler</h1>
+  <p>Pick when the bread comes out of the oven, and see when to start each step.</p>
+</header>
+
+<main>
+  <section aria-labelledby="scheduleHeading">
+    <h2 id="scheduleHeading">Schedule</h2>
+    <label>Out of the oven
+      <input id="end" type="datetime-local">
+    </label>
+    <table>
+      <thead><tr><th scope="col">Step</th><th scope="col">Start</th></tr></thead>
+      <tbody id="steps"></tbody>
+    </table>
+  </section>
+</main>
+
+<script type="module" src="app.ts"></script>
+</body>
+</html>
