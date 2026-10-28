@@ -1,10 +1,9 @@
 import { startWindows, type Step, type Window } from "./schedule.ts";
 
-// shortcut: targets for biga, bulk and proof are the middle of their ranges; set real ones if they differ
 const BIGA: Step[] = [
-  { name: "Mix the biga", detail: "800 g flour, 544 g water at 80°F, 3/16 tsp yeast.", then: "Ferments", min: 12 * 60, target: 13 * 60, max: 14 * 60 },
-  { name: "Mix the final dough", detail: "200 g flour, 206 g water at 105°F, 22 g salt, 2 g yeast.", then: "Bulk ferments", min: 150, target: 180, max: 210 },
-  { name: "Form the loaves", detail: "", then: "Proofs", min: 45, target: 50, max: 60 },
+  { name: "Mix the biga", detail: "800 g flour, 544 g water at 80°F, 3/16 tsp yeast.", then: "Ferments", min: 12 * 60, target: 14 * 60, max: 14 * 60 },
+  { name: "Mix the final dough", detail: "200 g flour, 206 g water at 105°F, 22 g salt, 2 g yeast.", then: "Bulk ferments", min: 150, target: 210, max: 210 },
+  { name: "Form the loaves", detail: "", then: "Proofs", min: 45, target: 45, max: 60 },
   { name: "Into the oven", detail: "Covered, at 475°F.", then: "Bakes", min: 30, target: 30, max: 30 },
   { name: "Uncover", detail: "30 min is Ken Forkish done.", then: "Bakes", min: 10, target: 15, max: 15 },
 ];
