@@ -1,6 +1,6 @@
 import { beforeEach, test } from "node:test";
 import assert from "node:assert/strict";
-import { saveEnd, savedEnd } from "../src/storage.ts";
+import { saveEnd, savedEnd } from "../src/scripts/helpers/storage.ts";
 
 const FUTURE = "2999-01-01T15:00";
 const PAST = "2000-01-01T15:00";

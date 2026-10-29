@@ -4,7 +4,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Bread Scheduler</title>
-    <link rel="stylesheet" href="styles.scss" />
+    <link rel="stylesheet" href="styles/main.scss" />
   </head>
   <body>
     <header>
@@ -16,8 +16,8 @@
     </header>
 
     <main>
-      <section aria-labelledby="bigaHeading">
-        <h2 id="bigaHeading">Biga</h2>
+      <section aria-labelledby="recipeName">
+        <h2 id="recipeName"></h2>
         <label for="end">Out of the oven</label>
         <input id="end" type="datetime-local" />
         <p>
@@ -40,6 +40,6 @@
       </section>
     </main>
 
-    <script type="module" src="app.ts"></script>
+    <script type="module" src="scripts/app.ts"></script>
   </body>
 </html>

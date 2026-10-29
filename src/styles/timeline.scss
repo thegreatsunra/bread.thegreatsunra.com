@@ -1,10 +1,3 @@
-@use "@picocss/pico/scss/pico.classless";
-
-// Reduce overall font size by 1px
-:root {
-  font-size: calc(var(--pico-font-size) * 0.9375);
-}
-
 // Steps: a light band for when the step could run, a solid bar for the target.
 .timeline {
   margin-bottom: var(--pico-spacing);
@@ -48,9 +41,4 @@
       white-space: nowrap;
     }
   }
-}
-
-// Keep each time on one line; the window breaks between its two times.
-th[scope="row"] ~ td {
-  white-space: pre;
 }

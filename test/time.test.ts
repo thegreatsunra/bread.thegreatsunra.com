@@ -1,15 +1,11 @@
 import { test } from "node:test";
 import assert from "node:assert/strict";
-import { startWindows, type Step } from "../src/schedule.ts";
+import { step } from "./fixtures.ts";
+import {
+  startWindows,
+  tomorrowAfternoon,
+} from "../src/scripts/helpers/time.ts";
 
-const step = (min: number, target: number, max: number): Step => ({
-  name: "",
-  detail: "",
-  then: "",
-  min,
-  target,
-  max,
-});
 const iso = (d: Date) => d.toISOString().slice(11, 16);
 
 test("startWindows works backwards from the end time", () => {
@@ -26,4 +22,12 @@ test("startWindows works backwards from the end time", () => {
 
 test("startWindows with no steps is empty", () => {
   assert.deepEqual(startWindows(new Date(), []), []);
+});
+
+test("tomorrowAfternoon is 3 PM the next day, across a month end", () => {
+  const d = tomorrowAfternoon(new Date(2026, 9, 31, 22, 45));
+  assert.deepEqual(
+    [d.getMonth(), d.getDate(), d.getHours(), d.getMinutes()],
+    [10, 1, 15, 0],
+  );
 });
