@@ -5,11 +5,13 @@
     "dev": "vite",
     "build": "tsc && vite build",
     "preview": "vite preview",
-    "test": "tsc -p test && node --test"
+    "test": "tsc -p test && node --test",
+    "format": "prettier --write ."
   },
   "devDependencies": {
     "@picocss/pico": "^2.1.1",
     "@types/node": "^24.19.2",
+    "prettier": "3.9.10",
     "sass": "^1.106.0",
     "typescript": "^7.0.2",
     "vite": "^8.3.5"

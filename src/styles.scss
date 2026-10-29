@@ -27,7 +27,11 @@
   }
 
   .window {
-    background: color-mix(in srgb, var(--pico-primary-background) 25%, transparent);
+    background: color-mix(
+      in srgb,
+      var(--pico-primary-background) 25%,
+      transparent
+    );
   }
 
   .target {

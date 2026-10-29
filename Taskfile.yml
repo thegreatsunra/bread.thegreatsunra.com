@@ -26,6 +26,14 @@ tasks:
       - npm run build
       - npm run preview
 
+  format:
+    desc: Format the code with Prettier
+    preconditions:
+      - sh: command -v npm
+        msg: "npm is not installed. Install Node.js from https://nodejs.org"
+    cmds:
+      - npm run format
+
   test:
     desc: Run the JS tests in a Node container
     preconditions:
