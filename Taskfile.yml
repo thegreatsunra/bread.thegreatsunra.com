@@ -40,4 +40,4 @@ tasks:
       - sh: docker info
         msg: "Docker is not running. Start Docker and try again."
     cmds:
-      - docker run --rm -v "$PWD":/app -v /app/node_modules -w /app node:24-alpine sh -c "npm ci && npm test"
+      - docker run --rm -v "$PWD":/app -v /app/node_modules -w /app node:26-alpine sh -c "npm ci && npm test"
