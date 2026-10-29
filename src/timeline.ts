@@ -19,7 +19,7 @@ export function drawTimeline(
       bar("target", windows[i].target, next.target, start, when),
     );
     const row = el("div");
-    row.append(el("span", step.name, "label"), track);
+    row.append(el("small", step.name), track);
     return row;
   });
   container.replaceChildren(...rows, timeAxis(start, when));
@@ -28,7 +28,7 @@ export function drawTimeline(
 function timeAxis(start: Date, end: Date) {
   const axis = el("div", "", "axis");
   for (const tick of tickTimes(start, end)) {
-    const label = el("span", tick.toLocaleTimeString([], { hour: "numeric" }));
+    const label = el("small", tick.toLocaleTimeString([], { hour: "numeric" }));
     label.style.left = `${percent(tick, start, end)}%`;
     axis.append(label);
   }
